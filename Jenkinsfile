@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install python3.6'
                 sh 'python3 -m venv env'
                 sh '. env/bin/activate'
                 sh 'pip3 install -r requirements.txt'
